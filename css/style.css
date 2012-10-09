@@ -51,7 +51,10 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	left:0;
 	width: 18%;
 }
-
+.wrapper {
+	height: auto !important;
+    min-height: 100%;
+}
 /* header */
 .header {
 	height: 105px;
@@ -99,7 +102,7 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	color:#fff;
 }
 .header-line-name__link:hover {color:#fff}
-
+.container {padding: 0 0 60px}
 
 /* main content */
 .calendar {
@@ -190,16 +193,45 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.5);
 	z-index: 99999;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
+	-webkit-transition: opacity 40000ms ease-in;
+	-moz-transition: opacity 40000ms ease-in;
+	transition: opacity 40000ms ease-in;
 	display: none;
 	pointer-events: none;
-	width: 400px;
 }
 .modal-dialog:target {
 	display: block;
 	pointer-events: auto;
+}
+.modal-dialog__data {
+	display: block;
+	width: 350px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 4px;
+	background: #fff;
+}
+
+
+
+.widget {
+	padding:10px 25px;
+}
+.block-nav {
+	padding:0;
+}
+.block-nav__item {
+	list-style: none;
+	padding:0 0 10px;
+}
+.footer {
+	border-top:1px solid #ccc;
+	margin: -60px auto 0;
+	padding:20px 0;
+	height: 20px;
+	color:#555;
+	text-align: center;
 }

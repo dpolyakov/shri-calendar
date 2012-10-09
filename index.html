@@ -4,10 +4,11 @@
 	<title>ШРИ</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link rel="stylesheet" type="text/css" href="style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css\style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css\font.css" media="all">
 </head>
 <body>
-<div id="wrapper">
+<div class="wrapper">
 	<header class="header colums">
 		<div class="colums__left colums__left__header">
 			<a href="http://yandex.ru" class="header-logo">
@@ -37,64 +38,134 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="colums">
-		<section class="content">
-			<table class="calendar">
-				<thead>
-					<tr>
-						<th>Понедельник</th>
-						<th>Вторник</th>
-						<th>Среда</th>
-						<th>Четверг</th>
-						<th>Пятница</th>
-						<th>Суббота</th>
-						<th>Воскресение</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="calendar__week">
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day">
-							<section class="event">
-								<span class="event__date">15 сентября</span>
-								<dl class="event__data cf">
-									<dt>Лекция</dt>
-									<dd><a href="#">Общий цикл разработки</a></dd>
-								</dl>
-								<dl class="event__data cf">
-									<dt>Лектор</dt>
-									<dd><a href="#">Михаил Трошев</a></dd>
-								</dl>
-								<dl class="event__data cf">
-									<dt>Конспект</dt>
-									<dd><a href="#">Презентация</a></dd>
-									<dd><a href="#">Видео</a></dd>
-								</dl>
-							</section>								
-						</td>
-						<td class="calendar__day"></td>
-					</tr>
-				</tbody>
-<!--
-					<tr class="calendar__week">
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-						<td class="calendar__day"></td>
-					</tr>
--->				
-			</table>
+	<div class="container">
+		<div class="colums">
+			<section class="content">
+				<table class="calendar">
+					<thead>
+						<tr>
+							<th>Понедельник</th>
+							<th>Вторник</th>
+							<th>Среда</th>
+							<th>Четверг</th>
+							<th>Пятница</th>
+							<th>Суббота</th>
+							<th>Воскресение</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="calendar__week">
+							<td class="calendar__day"><span class="calendar__day-date">10 сентября</span></td>
+							<td class="calendar__day"><span class="calendar__day-date">11 сентября</span></td>
+							<td class="calendar__day"><span class="calendar__day-date">12 сентября</span></td>
+							<td class="calendar__day"><span class="calendar__day-date">13 сентября</span></td>
+							<td class="calendar__day"><span class="calendar__day-date">14 сентября</span></td>
+							<td class="calendar__day">
+								<span class="calendar__day-date calendar__day-date_hasevent">15 сентября</span>
+								<ul class="event">
+									<li class="event__data">
+										<span class="event__data__time">12:00</span>
+										<a href="#event__data-full1510" class="event__data__link">Общий цикл разработки</a>
+										<span id="event__data-full1510" class="modal-dialog">
+											<dl class="event__data-full modal-dialog__data">
+												<dt class="event__data-full__name">Лектор</dt>
+												<dd class="event__data-full__desc"><a href="#">Михаил Трошев</a></dd>
+												<dt class="event__data-full__name"><i class="icon-picture"></i></dt>
+												<dd class="event__data-full__desc"><a href="#">Презентация</a></dd>
+												<dt class="event__data-full__name"><i class="icon-video"></i></dt>
+												<dd class="event__data-full__desc"><a href="#">Видео</a></dd>											
+											</dl>
+										</span>
 
-		</section>	
+									</li>
+									<li class="event__data">
+										<span class="event__data__time">13:00</span>
+										<a href="#" class="event__data__link">Task Tracker</a>
+									</li>	
+									<li class="event__data">
+										<span class="event__data__time">14:00</span>
+										<a href="#" class="event__data__link">Wiki</a>
+									</li>															
+								</ul>								
+							</td>
+							<td class="calendar__day"><span class="calendar__day-date">16 сентября</span></td>
+						</tr>
+						<tr class="calendar__week">
+							<td class="calendar__day"><span class="calendar__day-date">17 сентября</span></td>
+							<td class="calendar__day">
+								<span class="calendar__day-date calendar__day-date_hasevent">18 сентября</span>
+								<ul class="event">
+									<li class="event__data">
+										<span class="event__data__time">19:00</span>
+										<a href="#" class="event__data__link">Командная строка Unix</a>
+									</li>
+									<li class="event__data">
+										<span class="event__data__time">20:00</span>
+										<a href="#" class="event__data__link">Редакторы кода</a>
+									</li>															
+								</ul>	
+							</td>
+							<td class="calendar__day"><span class="calendar__day-date">19 сентября</span></td>
+							<td class="calendar__day">
+								<span class="calendar__day-date calendar__day-date_hasevent">20 сентября</span>
+								<ul class="event">
+									<li class="event__data">
+										<span class="event__data__time">19:00</span>
+										<a href="#" class="event__data__link">Браузеры</a>
+									</li>
+									<li class="event__data">
+										<span class="event__data__time">20:00</span>
+										<a href="#" class="event__data__link">Системы контроля версий</a>
+									</li>															
+								</ul>
+							</td>
+							<td class="calendar__day"><span class="calendar__day-date">21 сентября</span></td>
+							<td class="calendar__day">
+								<span class="calendar__day-date calendar__day-date_hasevent">22 сентября</span>
+								<ul class="event">
+									<li class="event__data">
+										<span class="event__data__time">12:00</span>
+										<a href="#" class="event__data__link">Тестирование</a>
+									</li>
+									<li class="event__data">
+										<span class="event__data__time">13:00</span>
+										<a href="#" class="event__data__link">Развертывание верстки </a>
+									</li>	
+									<li class="event__data">
+										<span class="event__data__time">14:00</span>
+										<a href="#" class="event__data__link">HTTP-протокол </a>
+									</li>															
+								</ul>							
+							</td>
+							<td class="calendar__day"><span class="calendar__day-date">23 сентября</span></td>
+						</tr>					
+					</tbody>
+	<!--
+						<tr class="calendar__week">
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+							<td class="calendar__day"></td>
+						</tr>
+	-->				
+				</table>
 
-	</div>
+			</section>	
+			<aside class="colums__left">
+				<nav class="widget">
+					<ul class="block-nav">
+						<li class="block-nav__item"><a href="">О школе</a></li>
+						<li class="block-nav__item"><a href="">Преподаватели</a></li>
+						<li class="block-nav__item"><a href="">Студенты</a></li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+	</div>	
 </div>
+<footer class="footer">β-версия</footer>
 </body>
 </html>
