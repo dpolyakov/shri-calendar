@@ -25,6 +25,13 @@ a:hover, .pseudo-link:hover {color:#f00;}
     cursor: pointer;
     text-decoration: none;	
 }
+.reset-indent, .reset-list {
+	margin:0;
+	padding:0;
+}
+.reset-list {
+	list-style: none;
+}
 .cl {clear:both; height:0;}
 .fl {float:left}
 .fr {float:right}
@@ -146,47 +153,48 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	font-weight: bold;
 	color:#222;
 }
-.event {padding:0}
-.event__data {
-	padding:5px 10px 5px 50px;
+.events__item {
+	padding:5px 20px 5px 50px;
 	position: relative;
 	list-style: none;
 }
-.event__data__time {
+.events__item:hover {
+	box-shadow: 0px 0px 4px 0px #999;
+	background: #fff;
+	z-index: 10;
+}
+.events__item__time {
 	position: absolute;
 	top:5px;
 	left:5px;
 }
-.event__data__link {
+.events__item__link {
 	border-bottom:1px dotted;
 	text-decoration: none;
 }
-.event__data-full:after {
-    clear: both;
+.events__item-more {
+	display: none;
+	padding: 10px 0;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 99%;
+	background: #fff;
+	list-style: none;
 }
-.event__data-full:before, .event__data-full:after {
-    content: "";
-    display: table;
-    line-height: 0;
+.events__item:hover .events__item-more {
+	display: block;
+	box-shadow: 0px 2px 4px 0px #999;
 }
-.event__data-full:before, .event__data-full:after {
-    content: "";
-    display: table;
-    line-height: 0;
+.events__item-more__item {padding:3px 10px;}
+.events__item-manage {
+	position: absolute;
+	top:5px;
+	right: 10px;
+	width: 10px;
+	display: none;
 }
-.event__data-full__name {
-	clear: left;
-	float: left;
-	overflow: hidden;
-	text-align: right;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	width: 100px;
-}
-.event__data-full__desc {
-    margin-left: 120px;
-}
-
+.events__item:hover .events__item-manage {display: block;}
 .modal-dialog {
 	position: fixed;
 	top: 0;

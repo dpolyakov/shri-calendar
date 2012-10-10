@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20100429 at Tue Oct  9 21:35:56 2012
+Created by FontForge 20100429 at Wed Oct 10 18:50:34 2012
  By root
 Copyright (C) 2012 by original authors @ fontello.com
 </metadata>
@@ -16,7 +16,7 @@ Copyright (C) 2012 by original authors @ fontello.com
     panose-1="2 0 6 3 0 0 0 0 0 0"
     ascent="800"
     descent="-200"
-    bbox="0 -127 988 766"
+    bbox="0 -141 1024 766"
     underline-thickness="50"
     underline-position="-100"
     unicode-range="U+2699-1F4C5"
@@ -36,6 +36,8 @@ l133 55l80 -79l-54 -135q6 -12 12 -30l133 -56v-112zM463.5 153q69.5 0 118.5 48.5t4
 d="M988 539l-536 -600l-340 337l123 124l196 -195l420 457z" />
     <glyph glyph-name="uni2715" unicode="&#x2715;" horiz-adv-x="813" 
 d="M224 558l181 -182l181 182l123 -124l-181 -179l182 -184l-124 -121l-181 182l-181 -182l-123 122l183 183l-182 179z" />
+    <glyph glyph-name="uniE800" unicode="&#xe800;" horiz-adv-x="1228" 
+d="M210 -23q0 41 67 87q82 67 235 97v57h5q-107 97 -107 256q0 117 45 184q57 71 159.5 71t158.5 -71q47 -67 46 -184q0 -159 -107 -256h5v-57q56 -10 118 -30q56 -21 117 -67q72 -51 72 -92q0 -62 -174 -92q-117 -21 -235 -21t-236 21q-169 30 -169 97z" />
     <glyph glyph-name="u1F304" unicode="&#x1f304;" 
 d="M0 -7v672q0 24 17.5 41.5t41.5 17.5h829q25 0 42 -17.5t17 -41.5v-672q0 -24 -17 -41.5t-42 -17.5h-829q-24 0 -41.5 17.5t-17.5 41.5zM79 13h789v632h-789v-632zM158 92v54l142 185l97 -80l182 276l210 -218v-217h-631zM158 486q0 33 23 56.5t57 23.5q33 0 56 -23.5
 t23 -56.5t-23 -56t-56 -23q-34 0 -57 23t-23 56z" />
