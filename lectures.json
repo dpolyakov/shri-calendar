@@ -1,0 +1,127 @@
+{"lectures":[
+    {
+        "date":"2012-09-15",
+        "time":"12:00",
+        "title":"Общий цикл разработки",
+        "speaker": {
+            "name": "Михаил Трошев",
+            "link":"http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
+        },
+        "slides":"http://yadi.sk/d/VDsJ4ZUBiq6u",
+        "video":"http://static.video.yandex.ru/lite/ya-events/yb1ix4ck06.4829",
+        "optional":false
+    },
+    {
+        "date":"2012-09-15",
+        "time":"13:00",
+        "title":"Task Tracker",
+        "speaker": {
+            "name": "Сергей Бережной",
+            "link":"http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+        },        
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-15",
+        "time":"14:00",
+        "title":"Wiki",
+        "speaker": {
+            "name": "Сергей Бережной",
+            "link":"http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+        },
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-18",
+        "time":"19:00",
+        "title":"Командная строка Unix",
+        "speaker": {
+            "name": "Виктор Ашик"
+        },        
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-18",
+        "time":"20:00",
+        "title":"Редакторы кода",
+        "speaker": {
+            "name": "Вячеслав Олиянчук"
+        },         
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-20",
+        "time":"19:00",
+        "title":"Браузеры",
+        "speaker":"Георгий Мостоловица",
+        "speaker": {
+            "name": "Вячеслав Олиянчук"
+        },         
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-20",
+        "time":"20:00",
+        "title":"Системы контроля версий",
+        "speaker": {
+            "name": "Сергей Сергеев"
+        },         
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-22",
+        "time":"12:00",
+        "title":"Тестирование ",
+        "speaker": {
+            "name": "Марина Широчкина"
+        }, 
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-22",
+        "time":"12:00",
+        "title":"Развертывание верстки",
+        "speaker": {
+            "name": "Павел Пушкарев"
+        }, 
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-22",
+        "time":"14:00",
+        "title":"HTTP-протокол ",
+        "speaker": {
+            "name": "Алексей Бережной"
+        },
+        "slides":"",
+        "video":"",
+        "optional":false
+    },
+    {
+        "date":"2012-09-24",
+        "time":"18:00",
+        "title":"XSLT",
+        "speaker": {
+            "name": "Сергей Пузанков"
+        },
+        "slides":"",
+        "video":"",
+        "optional":true
+    }   
+]}

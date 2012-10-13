@@ -3,7 +3,8 @@
 <head>
 	<title>ШРИ</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://necolas.github.com/normalize.css/2.0.1/normalize.css" type="text/css" media="screen, projection" />	 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/font.css" media="all">
 </head>
@@ -138,17 +139,6 @@
 							<td class="calendar__day"><span class="calendar__day-date">23 сентября</span></td>
 						</tr>					
 					</tbody>
-	<!--
-						<tr class="calendar__week">
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-							<td class="calendar__day"></td>
-						</tr>
-	-->				
 				</table>
 
 			</section>	
@@ -164,6 +154,45 @@
 		</div>
 	</div>	
 </div>
+<div id="result"></div>
 <footer class="footer">β-версия</footer>
+<script src="http://yandex.st/jquery/1.8.1/jquery.min.js"></script>
+<script src="js/xdate.js"></script>
+<script src="js/handlebars-1.0.rc.1.js"></script>
+<script src="js/main.js"></script>
+<script type="text/x-handlebars" id="template-week">
+	{{#each lectures}}
+	<td class="calendar__day">
+		<span class="calendar__day-date calendar__day-date_hasevent">{{tpldate}}</span>
+		<ul class="reset-list events">
+			<li class="events__item">
+				<span class="events__item__time">{{time}}</span>
+				<a href="#" class="events__item__link">{{title}}</a>
+				<ul class="events__item-more">
+					<li class="events__item-more__item"><i class="icon-user"></i>
+					{{#if speaker.link}}
+						<a href="{{speaker.link}}" target="_blank">{{speaker.name}}</a>
+					{{else}}
+						<span>{{speaker.name}}</span>
+					{{/if}}
+					</li>
+					{{#if slides}}
+					<li class="events__item-more__item"><i class="icon-picture"></i> <a href="{{slides}}">Презентация</a>
+					</li>
+					{{/if}}
+					{{#if video}}
+					<li class="events__item-more__item"><i class="icon-video"></i> <a href="{{video}}">Видео</a>
+					</li>
+					{{/if}}
+				</ul>
+				<ul class="reset-list events__item-manage">
+					<li><i class="icon-cog icon-link" title="Редактировать"></i></li>
+					<li><i class="icon-cancel icon-link" title="Удалить"></i></li>
+				</ul>						
+			</li>
+		</ul>								
+	</td>
+	{{/each}}
+</script>
 </body>
 </html>
