@@ -42,7 +42,7 @@
 	<div class="container">
 		<div class="colums">
 			<section class="content">
-				<table class="calendar">
+				<table class="calendar" id="result">
 					<thead>
 						<tr>
 							<th>Понедельник</th>
@@ -54,93 +54,7 @@
 							<th>Воскресение</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr class="calendar__week">
-							<td class="calendar__day"><span class="calendar__day-date">10 сентября</span></td>
-							<td class="calendar__day"><span class="calendar__day-date">11 сентября</span></td>
-							<td class="calendar__day"><span class="calendar__day-date">12 сентября</span></td>
-							<td class="calendar__day"><span class="calendar__day-date">13 сентября</span></td>
-							<td class="calendar__day"><span class="calendar__day-date">14 сентября</span></td>
-							<td class="calendar__day">
-								<span class="calendar__day-date calendar__day-date_hasevent">15 сентября</span>
-								<ul class="reset-list events">
-									<li class="events__item">
-										<span class="events__item__time">12:00</span>
-										<a href="#" class="events__item__link">Общий цикл разработки</a>
-										<ul class="events__item-more">
-											<li class="events__item-more__item"><i class="icon-user"></i> <a href="#">Михаил Трошев</a></li>
-											<li class="events__item-more__item"><i class="icon-picture"></i> <a href="#">Презентация</a></li>
-											<li class="events__item-more__item"><i class="icon-video"></i> <a href="#">Видео</a></li>
-										</ul>
-										<ul class="reset-list events__item-manage">
-											<li><i class="icon-cog icon-link" title="Редактировать"></i></li>
-											<li><i class="icon-cancel icon-link" title="Удалить"></i></li>
-										</ul>						
-									</li>
-									<li class="events__item">
-										<span class="events__item__time">13:00</span>
-										<a href="#" class="events__item__link">Task Tracker</a>
-									</li>	
-									<li class="events__item">
-										<span class="events__item__time">14:00</span>
-										<a href="#" class="events__item__link">Wiki</a>
-									</li>															
-								</ul>								
-							</td>
-							<td class="calendar__day"><span class="calendar__day-date">16 сентября</span></td>
-						</tr>
-						<tr class="calendar__week">
-							<td class="calendar__day"><span class="calendar__day-date">17 сентября</span></td>
-							<td class="calendar__day">
-								<span class="calendar__day-date calendar__day-date_hasevent">18 сентября</span>
-								<ul class="reset-list events">
-									<li class="events__item">
-										<span class="events__item__time">19:00</span>
-										<a href="#" class="events__item__link">Командная строка Unix</a>
-									</li>
-									<li class="events__item">
-										<span class="events__item__time">20:00</span>
-										<a href="#" class="events__item__link">Редакторы кода</a>
-									</li>															
-								</ul>	
-							</td>
-							<td class="calendar__day"><span class="calendar__day-date">19 сентября</span></td>
-							<td class="calendar__day">
-								<span class="calendar__day-date calendar__day-date_hasevent">20 сентября</span>
-								<ul class="reset-list events">
-									<li class="events__item">
-										<span class="events__item__time">19:00</span>
-										<a href="#" class="events__item__link">Браузеры</a>
-									</li>
-									<li class="events__item">
-										<span class="events__item__time">20:00</span>
-										<a href="#" class="events__item__link">Системы контроля версий</a>
-									</li>															
-								</ul>
-							</td>
-							<td class="calendar__day"><span class="calendar__day-date">21 сентября</span></td>
-							<td class="calendar__day">
-								<span class="calendar__day-date calendar__day-date_hasevent">22 сентября</span>
-								<ul class="reset-list events">
-									<li class="events__item">
-										<span class="events__item__time">12:00</span>
-										<a href="#" class="events__item__link">Тестирование</a>
-									</li>
-									<li class="events__item">
-										<span class="events__item__time">13:00</span>
-										<a href="#" class="events__item__link">Развертывание верстки </a>
-									</li>	
-									<li class="events__item">
-										<span class="events__item__time">14:00</span>
-										<a href="#" class="events__item__link">HTTP-протокол </a>
-									</li>															
-								</ul>							
-							</td>
-							<td class="calendar__day"><span class="calendar__day-date">23 сентября</span></td>
-						</tr>					
-					</tbody>
 				</table>
-
 			</section>	
 			<aside class="colums__left">
 				<nav class="widget">
@@ -154,45 +68,44 @@
 		</div>
 	</div>	
 </div>
-<div id="result"></div>
+
 <footer class="footer">β-версия</footer>
 <script src="http://yandex.st/jquery/1.8.1/jquery.min.js"></script>
 <script src="js/xdate.js"></script>
 <script src="js/handlebars-1.0.rc.1.js"></script>
 <script src="js/main.js"></script>
-<script type="text/x-handlebars" id="template-week">
-	{{#each lectures}}
-	<td class="calendar__day">
-		<span class="calendar__day-date calendar__day-date_hasevent">{{tpldate}}</span>
-		<ul class="reset-list events">
-			<li class="events__item">
-				<span class="events__item__time">{{time}}</span>
-				<a href="#" class="events__item__link">{{title}}</a>
-				<ul class="events__item-more">
-					<li class="events__item-more__item"><i class="icon-user"></i>
-					{{#if speaker.link}}
-						<a href="{{speaker.link}}" target="_blank">{{speaker.name}}</a>
-					{{else}}
-						<span>{{speaker.name}}</span>
-					{{/if}}
-					</li>
-					{{#if slides}}
-					<li class="events__item-more__item"><i class="icon-picture"></i> <a href="{{slides}}">Презентация</a>
-					</li>
-					{{/if}}
-					{{#if video}}
-					<li class="events__item-more__item"><i class="icon-video"></i> <a href="{{video}}">Видео</a>
-					</li>
-					{{/if}}
-				</ul>
-				<ul class="reset-list events__item-manage">
-					<li><i class="icon-cog icon-link" title="Редактировать"></i></li>
-					<li><i class="icon-cancel icon-link" title="Удалить"></i></li>
-				</ul>						
+<script type="text/x-handlebars" id="lecture">
+	<li class="lectures__item" id="{{lecture_id}}">
+		<span class="lectures__item__time">{{time}}</span>
+		<a href="#" class="lectures__item__link">{{title}}</a>
+		<ul class="lectures__item-more">
+			<li class="lectures__item-more__item"><i class="icon-user"></i>
+			{{#if speaker.link}}
+				<a href="{{speaker.link}}" target="_blank">{{speaker.name}}</a>
+			{{else}}
+				<span>{{speaker.name}}</span>
+			{{/if}}
 			</li>
-		</ul>								
-	</td>
-	{{/each}}
+			{{#if slides}}
+			<li class="lectures__item-more__item"><i class="icon-picture"></i> <a href="{{slides}}">Презентация</a>
+			</li>
+			{{/if}}
+			{{#if video}}
+			<li class="lectures__item-more__item"><i class="icon-video"></i> <a href="{{video}}">Видео</a>
+			</li>
+			{{/if}}
+		</ul>
+		<ul class="reset-list lectures__item-manage">
+			<li><i class="icon-cog icon-link" title="Редактировать" onclick="edit('{{lecture_id}}'')"></i></li>
+			<li><i class="icon-cancel icon-link" title="Удалить" onclick="delete('{{lecture_id}}'')"></i></li>
+		</ul>						
+	</li>
 </script>
+<script type="text/x-handlebars" id="day">
+	<td class="calendar__day" id="week_{{week}}_{{day}}" data-total="0">
+		<span class="calendar__day-date calendar__day-date_noevent">{{newdate}}</span>
+		<ul class="reset-list lectures" id="week_{{week}}_{{day}}_lectures"></ul>
+	</td>
+</script>		
 </body>
 </html>

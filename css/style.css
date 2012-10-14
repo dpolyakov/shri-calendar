@@ -153,26 +153,26 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	font-weight: bold;
 	color:#222;
 }
-.events__item {
+.lectures__item {
 	padding:5px 20px 5px 50px;
 	position: relative;
 	list-style: none;
 }
-.events__item:hover {
+.lectures__item:hover {
 	box-shadow: 0px 0px 4px 0px #999;
 	background: #fff;
 	z-index: 10;
 }
-.events__item__time {
+.lectures__item__time {
 	position: absolute;
 	top:5px;
 	left:5px;
 }
-.events__item__link {
+.lectures__item__link {
 	border-bottom:1px dotted;
 	text-decoration: none;
 }
-.events__item-more {
+.lectures__item-more {
 	display: none;
 	padding: 10px 0;
 	width: 100%;
@@ -182,19 +182,19 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	background: #fff;
 	list-style: none;
 }
-.events__item:hover .events__item-more {
+.lectures__item:hover .lectures__item-more {
 	display: block;
 	box-shadow: 0px 2px 4px 0px #999;
 }
-.events__item-more__item {padding:3px 10px;}
-.events__item-manage {
+.lectures__item-more__item {padding:3px 10px;}
+.lectures__item-manage {
 	position: absolute;
 	top:5px;
 	right: 10px;
 	width: 10px;
 	display: none;
 }
-.events__item:hover .events__item-manage {display: block;}
+.lectures__item:hover .lectures__item-manage {display: block;}
 .modal-dialog {
 	position: fixed;
 	top: 0;
@@ -207,11 +207,11 @@ a:hover, .pseudo-link:hover {color:#f00;}
 	-moz-transition: opacity 40000ms ease-in;
 	transition: opacity 40000ms ease-in;
 	display: none;
-	pointer-events: none;
+	pointer-lectures: none;
 }
 .modal-dialog:target {
 	display: block;
-	pointer-events: auto;
+	pointer-lectures: auto;
 }
 .modal-dialog__data {
 	display: block;
