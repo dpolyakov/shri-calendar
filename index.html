@@ -33,9 +33,9 @@
 		</div>
 		<nav>
 			<ul class="inline-nav service-nav">
-				<li class="inline-nav__item"><span class="pseudo-link" onclick="">Добавить лекцию</span></li>
-				<li class="inline-nav__item"><span class="pseudo-link" onclick="">Загрузить лекции</span></li>
-				<li class="inline-nav__item"><span class="pseudo-link" onclick="">Выгрузить лекции</span></li>
+				<li class="inline-nav__item"><span class="pseudo-link" onclick="newLecture()">Добавить лекцию</span></li>
+				<!-- <li class="inline-nav__item"><span class="pseudo-link" onclick="">Загрузить лекции</span></li> -->
+				<li class="inline-nav__item"><span class="pseudo-link" onclick="exportLecture()">Выгрузить лекции</span></li>
 			</ul>
 		</nav>
 	</header>
@@ -76,28 +76,28 @@
 <script src="js/main.js"></script>
 <script type="text/x-handlebars" id="lecture">
 	<li class="lectures__item" id="{{lecture_id}}">
-		<span class="lectures__item__time">{{time}}</span>
+		<span class="lectures__item__time" data-date="{{date}}">{{time}}</span>
 		<a href="#" class="lectures__item__link">{{title}}</a>
 		<ul class="lectures__item-more">
 			<li class="lectures__item-more__item"><i class="icon-user"></i>
 			{{#if speaker.link}}
-				<a href="{{speaker.link}}" target="_blank">{{speaker.name}}</a>
+				<a href="{{speaker.link}}" class="lectures__item__speaker" target="_blank">{{speaker.name}}</a>
 			{{else}}
-				<span>{{speaker.name}}</span>
+				<span class="lectures__item__speaker">{{speaker.name}}</span>
 			{{/if}}
 			</li>
 			{{#if slides}}
-			<li class="lectures__item-more__item"><i class="icon-picture"></i> <a href="{{slides}}">Презентация</a>
+			<li class="lectures__item-more__item"><i class="icon-picture"></i> <a href="{{slides}}"  class="lectures__item__slides">Презентация</a>
 			</li>
 			{{/if}}
 			{{#if video}}
-			<li class="lectures__item-more__item"><i class="icon-video"></i> <a href="{{video}}">Видео</a>
+			<li class="lectures__item-more__item"><i class="icon-video"></i> <a href="{{video}}" class="lectures__item__video">Видео</a>
 			</li>
 			{{/if}}
 		</ul>
 		<ul class="reset-list lectures__item-manage">
-			<li><i class="icon-cog icon-link" title="Редактировать" onclick="edit('{{lecture_id}}'')"></i></li>
-			<li><i class="icon-cancel icon-link" title="Удалить" onclick="delete('{{lecture_id}}'')"></i></li>
+			<li><i class="icon-cog icon-link" title="Редактировать" onclick="editLecture('{{lecture_id}}')"></i></li>
+			<li><i class="icon-cancel icon-link" title="Удалить" onclick="deleteLecture('{{lecture_id}}')"></i></li>
 		</ul>						
 	</li>
 </script>
@@ -106,6 +106,79 @@
 		<span class="calendar__day-date calendar__day-date_noevent">{{newdate}}</span>
 		<ul class="reset-list lectures" id="week_{{week}}_{{day}}_lectures"></ul>
 	</td>
-</script>		
+</script>
+
+<div class="modal hide" role="dialog" id="editDialog">
+	<div class="modal__header cf">
+		<h3 class="modal__header-title">Новая лекция</h3>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	</div>
+	<div class="modal__body">
+		<form class="form-horizontal" id="editForm" action="" method="post">
+			<input type="hidden" id="currentId" />
+			<div class="control-group">
+				<label for="title" class="control-label">Название:</label>
+				<div class="control">
+					<input type="text" name="title" id="title" class="form-input form-input__wide" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="date" class="control-label">Дата:</label>
+				<div class="control">
+					<input type="date" name="date" id="date" class="form-input " />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="time" class="control-label">Время:</label>
+				<div class="control">
+					<input type="time" name="time" id="time" class="form-input" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="speaker-name" class="control-label">Лектор:</label>
+				<div class="control">
+					<input type="text" name="speaker-name" id="speaker-name" class="form-input form-input__wide" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="speaker-link" class="control-label">Ссылка на лектора:</label>
+				<div class="control">
+					<input type="url" name="speaker-link" id="speaker-link" class="form-input form-input__wide" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="slides" class="control-label">Презентация:</label>
+				<div class="control">
+					<input type="url" name="slides" id="slides" class="form-input form-input__wide" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="video" class="control-label">Видео:</label>
+				<div class="control">
+					<input type="url" name="video" id="video" class="form-input form-input__wide" />
+				</div>
+			</div>	
+			<div class="control-group">
+				<label for="optional" class="control-label">Факультатив:</label>
+				<div class="control">
+					<input type="checkbox" name="optional" id="optional" class="form-input form-checkbox" />
+				</div>
+			</div>																					
+		</form>
+	</div>
+	<div class="modal__footer">
+		<button class="button" onclick="saveLecture()">Сохранить</button>
+	</div>	
+</div>
+<div class="modal hide" role="dialog" id="exportDialog">
+	<div class="modal__header cf">
+		<h3 class="modal__header-title">Экспорт</h3>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	</div>
+	<div class="modal__body">
+		<textarea name="code" onclick="this.select()" readonly="readonly" id="export" class="form-input form-textarea" cols="10"></textarea>
+	</div>
+</div>
+
 </body>
 </html>
