@@ -1,0 +1,122 @@
+* {
+    font-size: 100%;
+    margin: 0;
+}
+html {
+	height: 100%;
+}
+header, nav, section, article, aside, footer {
+	display: block;
+}
+body {
+	font: 14px/18px Arial, sans-serif;
+	position:relative;
+	-webkit-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	width: 100%;
+	height: 100%;
+}
+
+.inline-nav,
+.widget,
+.modal,
+.lectures__item-manage
+{
+	display: none
+}
+.reset-indent, .reset-list {
+	margin:0;
+	padding:0;
+}
+.reset-list {
+	list-style: none;
+}
+.header {
+	height: 105px;
+}
+.header-logo {
+	display: inline-block;
+	text-decoration: none;
+	outline: none;
+}
+.header-line {
+	background: #f85032;
+	border-radius: 3px;	
+	width: 80%;
+}
+.header-line-name {
+    display: block;
+    font: 22px/26px Arial,sans-serif;
+    padding: 2px 0px 5px 7px;
+    white-space: nowrap;	
+}
+.header-line-name__link {
+	color:#fff;
+}
+.header-line-name__link:hover {color:#fff}
+.container {padding: 0 0 60px}
+/* main content */
+.calendar {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-radius: 4px;
+	width: 80%;
+}
+.calendar th, .calendar td {
+	border-left: 1px solid #ddd;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    width: 14.28%
+}
+.calendar th {
+	 padding: 8px;
+	 text-align:center;
+}
+.calendar th:first-child, .calendar td:first-child {
+	border-left: 0;
+} 
+
+.calendar tbody th, .calendar tbody td {
+	border-top: 1px solid #ddd;
+}
+
+.calendar__day-date {
+	font-size: 12px;
+	color:#999;
+	display: block;
+	padding:2px;
+	text-align: center;
+}
+.calendar__day-date_hasevent {
+	background: rgba(238,57,26,.2);
+	font-weight: bold;
+	color:#222;
+}
+.lectures__item {
+	padding:5px 5px 5px 50px;
+	position: relative;
+	list-style: none;
+}
+.lectures__item__time {
+	position: absolute;
+	top:5px;
+	left:5px;
+}
+.lectures__item__link {
+	border-bottom:1px dotted;
+	text-decoration: none;
+}
+.lectures__item-more {
+	position: relative;
+	background: #fff;
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+.lectures__item-more__item {padding:3px 0;display: none}
+.lectures__item-more__item:first-child {display: inline-block;}
+.icon-user {
+	float:left;
+	margin-left: -24px;
+}
